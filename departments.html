@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pennsylvania State Roleplay</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #f7f7f7;
+            line-height: 1.6;
+            overflow-x: hidden; 
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 15px;
+            background: #1a1a1a;
+            width: 100%;
+            z-index: 10;
+        }
+
+        nav .profile-img-nav {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        /* Header */
+        header {
+            background: #121212;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        header p {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 10px 50px;
+            text-align: center;
+        }
+
+        .image-grid img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .image-grid .button-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .button {
+            padding: 10px 50px;
+            font-size: 1.2em;
+            background-color: #81CCE0;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+        }
+
+        .button:hover {
+            background-color: #1e60c0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .button:active {
+            background-color: #1c4e9b;
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.5);
+        }
+
+        .image-label {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #81CCE0;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <img src="assets/PSRP.png" alt="Profile Image" class="profile-img-nav">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="departments.html">Departments</a></li>
+        <li><a href="information.html">Information</a></li>
+    </ul>
+</nav>
+
+<header>
+    <h1>Departments</h1>
+    <p>Our server provides a wide range of exciting opportunities to serve the community through dedicated and dynamic public safety departments. Whether your passion lies in law enforcement, firefighting, or emergency services, you can find a rewarding role that suits your skills and interests. Each department is vital to maintaining order, ensuring safety, and responding to critical situations in our community. </p>
+</header>
+
+<div class="image-grid">
+    <div>
+        <img src="assets/Penn2.png" alt="Department 1">
+        <div class="image-label" style="color: #364792;">Pittsburgh Police Department</div>
+        <div class="button-container">
+            <button class="button" onclick="window.location.href='https://discord.gg/7n9Z3HbSBq'">Join Here!</button>
+        </div>
+    </div>
+    <div>
+        <img src="assets/Penn4.png" alt="Department 2">
+        <div class="image-label" style="color: #f4b921;">Erie County Sheriff's Department</div>
+        <div class="button-container">
+            <button class="button" onclick="window.location.href='https://discord.gg/Qv2z5zqQp4'">Join Here!</button>
+        </div>
+    </div>
+    <div>
+        <img src="assets/Penn3.png" alt="Department 3">
+        <div class="image-label" style="color: #919295;">Pennsylvania State Police</div>
+        <div class="button-container">
+            <button class="button" onclick="window.location.href='https://discord.gg/29DDsTdbMg'">Join Here!</button>
+        </div>
+    </div>
+    <div>
+        <img src="assets/Penn5.png" alt="Department 4">
+        <div class="image-label" style="color: #eb1a2a">Pittsburgh Fire Department</div>
+        <div class="button-container">
+            <button class="button" onclick="window.location.href='https://discord.gg/tvvyySsVAb'">Join Here!</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pennsylvania State Roleplay</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #f7f7f7;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 15px;
+            background: #1a1a1a;
+            width: 100%;
+            z-index: 10;
+        }
+
+        nav .profile-img-nav {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        header {
+            background: #121212;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        header p {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 50px;
+        }
+
+        footer {
+            background: #121212;
+            color: white;
+            text-align: left;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 800px;
+            margin-right: 30px;
+        }
+
+        .carousel-image {
+            display: none;
+        }
+
+        .carousel-image.active {
+            display: block;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .button {
+            padding: 8px 30px;
+            font-size: 1.2em;
+            background-color: #81CCE0;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: background-color 0.3s, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+        }
+
+        .button:hover {
+            background-color: #1e60c0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .button:active {
+            background-color: #1c4e9b;
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.5);
+        }
+
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        #lightbox-img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 40px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #81CCE0;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .dot.active-dot {
+            background-color: #81CCE0;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <img src="assets/PSRP.png" alt="Profile Image" class="profile-img-nav">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="departments.html">Departments</a></li>
+        <li><a href="information.html">Information</a></li>
+    </ul>
+</nav>
+
+<header>
+    <h1>Information</h1>
+    <p>Our server provides a wide range of exciting opportunities to serve the community through dynamic public safety departments. Whether you're passionate about law enforcement, firefighting, or emergency services, there's a role suited to your skills and interests, each vital to maintaining safety and responding to critical situations. Important links to help you get started are all here: apply through our Staff Application to join the team and make a difference, connect with our Roblox Group to participate in community activities, and view your moderations to keep track of your status and any updates. Explore these resources to stay informed and engaged with everything our server has to offer!</p>
+</header>
+
+<div class="content">
+    <div class="carousel">
+        <div class="carousel-image active">
+            <img src="assets/Penn1.png" alt="Project 1" style="width: 100%" onclick="openLightbox(this)">
+        </div>
+        <div class="carousel-image">
+            <img src="assets/Penn2.png" alt="Project 2" style="width: 100%" onclick="openLightbox(this)">
+        </div>
+        <div class="carousel-image">
+            <img src="assets/Penn4.png" alt="Project 4" style="width: 100%" onclick="openLightbox(this)">
+        </div>
+
+        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+        <span class="next" onclick="changeImage(1)">&#10095;</span>
+    </div>
+
+    <div class="buttons">
+        <a href="https://policeroleplay.community/join/psrpI">
+            <button class="button">Join Our In-Game Server!</button>
+            </a>
+        </a>
+        <a href="https://melonly.xyz/logs/7264709942362247168">
+        <button class="button">View Your Moderations</button>
+        </a>
+        <a href="https://servers.melonly.xyz/pennsylvania-state-roleplay-8">
+            <button class="button">Server Directory</button>
+        </a>
+        <a href="https://melonly.xyz/forms/7271236702448914432">
+            <button class="button">Staff Application</button>
+        </a>
+        <a href="https://www.roblox.com/communities/34124101/ERLC-Pennsylvania-State-RP#!/about">
+            <button class="button">Roblox Group</button>
+        </a>
+
+
+    </div>
+</div>
+
+<div class="dots">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+</div>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+    <span class="close-lightbox" onclick="closeLightbox(event)">&times;</span>
+    <img id="lightbox-img" src="" alt="Enlarged Image">
+</div>
+
+<script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel-image');
+    const dots = document.querySelectorAll('.dot');
+
+    function changeImage(direction) {
+        currentIndex += direction;
+        if (currentIndex >= images.length) {
+            currentIndex = 0;
+        } else if (currentIndex < 0) {
+            currentIndex = images.length - 1;
+        }
+        showImage();
+    }
+
+    function currentSlide(index) {
+        currentIndex = index - 1;
+        showImage();
+    }
+
+    function showImage() {
+        images.forEach((image, index) => {
+            image.classList.remove('active');
+            dots[index].classList.remove('active-dot');
+        });
+        images[currentIndex].classList.add('active');
+        dots[currentIndex].classList.add('active-dot');
+    }
+
+    showImage();
+
+    function openLightbox(image) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        lightbox.style.display = 'flex';
+        lightboxImg.src = image.src;
+    }
+
+    function closeLightbox(event) {
+        const lightbox = document.getElementById('lightbox');
+        if (event.target === lightbox || event.target.className === 'close-lightbox') {
+            lightbox.style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>
