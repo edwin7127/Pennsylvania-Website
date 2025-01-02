@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#000000">
+    <title>Pennsylvania State Roleplay</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/PSRPL.png" type="image/x-icon">
+
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .carousel-image {
+            transition: opacity 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="" class="logo">
+                <img src="assets/PSRPL.png" alt="Pennsylvania State Roleplay" class="logo-icon">
+                <span>Pennsylvania State Roleplay</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#preview">Server Preview</a></li>
+                <li><a href="#reviews">Server Reviews</a></li>
+                <li><a href="departments.html">Departments</a></li>
+                <li><a href="https://discord.gg/pennstate">Join Our Discord</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="container">
+                <h1>Welcome To <span class="highlight">Pennsylvania State Roleplay</span></h1>
+                <p>Based in the vibrant city of Pittsburgh, our server offers a rich and engaging roleplay environment where you can dive into dynamic scenarios, craft compelling stories, and connect with a dedicated community. Whether you're solving complex situations or simply looking for fun, Pennsylvania State Roleplay brings an authentic and immersive experience to life in the world of Emergency Liberty County.</p>
+                <div class="cta-buttons">
+                    <a href="https://discord.gg/pennstate" class="btn btn-primary">
+                        <i data-lucide="plus"></i> Join Our Discord
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="preview" class="preview">
+            <div class="container">
+                <h2>A preview of <span class="highlight">Pennsylvania State Roleplay</span></h2>
+                <div class="content">
+                    <div class="carousel">
+                        <div class="carousel-image active">
+                            <img src="assets/Penn1.png" alt="Project 1" style="width: 100%" onclick="openLightbox(this)">
+                        </div>
+                        <div class="carousel-image">
+                            <img src="assets/Penn2.png" alt="Project 2" style="width: 100%" onclick="openLightbox(this)">
+                        </div>
+                        <div class="carousel-image">
+                            <img src="assets/Penn4.png" alt="Project 4" style="width: 100%" onclick="openLightbox(this)">
+                        </div>
+                
+                        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+                        <span class="next" onclick="changeImage(1)">&#10095;</span>
+                    </div>
+                
+                    <div class="button-container">
+                        <a href="https://policeroleplay.community/join/psrpI" class="btn-link">
+                            <button class="btn btn-secondary">Join Our In-Game Server!</button>
+                        </a>
+                        <a href="https://melonly.xyz/logs/7264709942362247168" class="btn-link">
+                            <button class="btn btn-secondary">View Your Moderations</button>
+                        </a>
+                        <a href="https://servers.melonly.xyz/pennsylvania-state-roleplay-8" class="btn-link">
+                            <button class="btn btn-secondary">Server Directory</button>
+                        </a>
+                        <a href="https://melonly.xyz/forms/7271236702448914432" class="btn-link">
+                            <button class="btn btn-secondary">Staff Application</button>
+                        </a>
+                        <a href="https://www.roblox.com/communities/34124101/ERLC-Pennsylvania-State-RP#!/about" class="btn-link">
+                            <button class="btn btn-secondary">Roblox Group</button>
+                        </a>
+                    </div>
+                    
+                
+                    <div class="dots">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="reviews" class="testimonials">
+            <div class="container">
+                <h2>Server Directory <span class="highlight">Reviews</span></h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p>"An Amazing server! Grew extremely quickly, a very prompt and active High Rank and Senior High Rank team and not too strict but strict. Very nice and fun role-plays and departments, and multiple opportunities."</p>
+                        <div class="testimonial-author">
+                            <img src="assets/mys.png" alt="mysticjosh_" class="avatar">
+                            <div>
+                                <h4>mysticjosh_</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Although the server is new, the management team and directors are kind and funny. Their departments are really good with more than 4 departments. Good community and fun roleplays!"</p>
+                        <div class="testimonial-author">
+                            <img src="assets/jeff.gif" alt="jeffbezol" class="avatar">
+                            <div>
+                                <h4>jeffbezol</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Amazing active server with great roleplays!"</p>
+                        <div class="testimonial-author">
+                            <img src="assets/edwin.png" alt="_edwin__" class="avatar">
+                            <div>
+                                <h4>_edwin__</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel-image');
+        const dots = document.querySelectorAll('.dot');
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex >= images.length) {
+                currentIndex = 0;
+            } else if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            }
+            showImage();
+        }
+
+        function currentSlide(index) {
+            currentIndex = index - 1;
+            showImage();
+        }
+
+        function showImage() {
+            images.forEach((image, index) => {
+                image.classList.remove('active');
+                dots[index].classList.remove('active-dot');
+            });
+            images[currentIndex].classList.add('active');
+            dots[currentIndex].classList.add('active-dot');
+        }
+
+        showImage();
+
+        function openLightbox(image) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightbox.style.display = 'flex';
+            lightboxImg.src = image.src;
+        }
+
+        function closeLightbox(event) {
+            const lightbox = document.getElementById('lightbox');
+            if (event.target === lightbox || event.target.className === 'close-lightbox') {
+                lightbox.style.display = 'none';
+            }
+        }
+    </script>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <span class="close-lightbox" onclick="closeLightbox(event)">&times;</span>
+        <img id="lightbox-img" src="" alt="Enlarged Image">
+    </div>
+</body>
+</html>
